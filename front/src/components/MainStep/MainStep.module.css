@@ -8,14 +8,16 @@
   .container {
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-end; */
     align-items: flex-start;
-    /* align-items: center; */
-    padding-top: 8vmax;
-    /* padding-left: 14vmax; */
-    /* padding-bottom: calc(var(--mantine-spacing-xl) * 6); */
+    padding-top: 11vmax;
     z-index: 1;
     position: relative;
+  }
+
+  .icons {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 2vmax;
   }
   
   .title {
@@ -26,11 +28,9 @@
   }
   
   .description {
+    font-size: 1vmax;
     margin-top: 0.5vmax;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
-    color: var(--mantine-color-white);
+    color: rgb(219, 219, 219);
     max-width: 37.5vmax;
   }
   
