@@ -1,20 +1,12 @@
 .wrapper {
     padding-top: 1vmax;
     padding-bottom: 2vmax;
-    /* min-height: 35.25vmax; */
-    /* background-image: radial-gradient(
-      var(--mantine-color-blue-6) 0%,
-      var(--mantine-color-blue-4) 100%
-    );
-    background-repeat: no-repeat;
-    background-position: top left; */
     position: relative;
-    /* color: var(--mantine-color-black); */
   }
   
   .title {
     color: black;
-    font-size: 3vmax;
+    font-size: 2vmax;
     font-family:
       Greycliff CF,
       var(--mantine-font-family);

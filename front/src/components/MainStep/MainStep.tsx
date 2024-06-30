@@ -2,23 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Overlay, Container, Title, Text, SimpleGrid } from '@mantine/core';
 import classes from './MainStep.module.css';
 import { MainButton } from '../UI/MainButton/MainButton.tsx';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export function MainStep() {
 
   const [ screenSizeW, setScreenSizeW ] = useState(window.innerWidth)
-  const navigate = useNavigate()
 
   useEffect(() => {
     window.onresize = () => {setScreenSizeW(window.innerWidth)}
   }, [screenSizeW])
 
-  const resizeWin = (size) => {
+  const resizeWin = (size: number) => {
     if(size > 1440) return {width: '1440px', height: '1779px'}
     return {width: screenSizeW, height: 1779/100*(screenSizeW * 100 / 1440)}
   }
 
-  const telOrComp = (size) => {
+  const contacts = (size: number) => {
     if(size > 1440){
       return (
       <Container className={classes.control}>
@@ -48,6 +47,37 @@ export function MainStep() {
       )
   }
 
+  const data = (size: number) => {
+    if(size > 700){
+      return (
+        <Text className={classes.description}>
+        <b><p>- Ноутбуки</p> <p>- Мобильные телефоны</p> <p>- Планшеты</p> <p>- Мониторы</p> <p>- Телевизоры</p> <p>- Принтеры</p> <p>- Заправка лазерных картриджей</p></b>
+        <p>&nbsp;</p>
+        <hr></hr>
+        {/* <p>&nbsp;</p> */}
+        <p><b>Беларусь, Минск, ул. Лобанка, 94, павильон 10, ТЦ "MAXIMUS"</b></p>
+        <p>Пн - пт 11:00 - 20:00</p>
+        <p>Сб - вскр 11:00 - 18:00</p>
+        <b><p>+375 44 7310419 A1</p></b>
+        <hr></hr>
+      </Text>
+      )
+    } 
+    return (
+      <Text className={classes.description}>
+        <b>Ноутбуки, Мобильные телефоны, Планшеты, Мониторы, Телевизоры, Принтеры, Заправка лазерных картриджей</b>
+        <hr></hr>
+        <b>
+        <p>Беларусь, Минск, ул. Лобанка, 94, павильон 10, ТЦ "MAXIMUS"</p>
+        <p>Пн - пт 11:00 - 20:00</p>
+        <p>Сб - вскр 11:00 - 18:00</p>
+        <hr></hr>
+        <p>+375 44 7310419 A1</p>
+        </b>
+      </Text>
+    )
+  }
+
     return (
     <div className={classes.hero} style={resizeWin(screenSizeW)}>
       <Overlay
@@ -57,19 +87,8 @@ export function MainStep() {
       />
       <Container className={classes.container}>
         <Title className={classes.title}>Ремонт цифровой техники</Title>
-        <Text className={classes.description}>
-          Ноутбуки, мобильные телефоны, планшеты, мониторы, телевизоры, принтеры, заправка лазерных картриджей
-          <hr></hr>
-          <b>
-            <p>Беларусь, Минск, ул. Лобанка, 94, павильон 10, ТЦ "MAXIMUS"</p>
-            <p>пн - пт 11:00 - 20:00</p>
-            <p>сб - вскр 11:00 - 18:00</p>
-            <hr></hr>
-            <p>+375 44 7310419 A1</p>
-            {/* <p>+375 29 1344448 A1 (мастер по телефонам)</p> */}
-          </b>
-        </Text>
-        {telOrComp(screenSizeW)}
+        {data(screenSizeW)}
+        {contacts(screenSizeW)}
       </Container>
     </div>
   );
