@@ -9,7 +9,7 @@ export function MainStep() {
   const [ screenSizeW, setScreenSizeW ] = useState(window.innerWidth)
 
   useEffect(() => {
-    window.onresize = () => {setScreenSizeW(window.innerWidth)}
+    if(screenSizeW > 500) window.onresize = () => {setScreenSizeW(window.innerWidth)}
   }, [screenSizeW])
 
   const resizeWin = (size: number) => {
@@ -18,7 +18,7 @@ export function MainStep() {
   }
 
   const contacts = (size: number) => {
-    if(size > 1440){
+    if(size > 500){
       return (
       <Container className={classes.control}>
         <SimpleGrid
@@ -48,7 +48,7 @@ export function MainStep() {
   }
 
   const data = (size: number) => {
-    if(size > 700){
+    if(size > 500){
       return (
         <Text className={classes.description}>
         <b><p>- Ноутбуки</p> <p>- Мобильные телефоны</p> <p>- Планшеты</p> <p>- Мониторы</p> <p>- Телевизоры</p> <p>- Принтеры</p> <p>- Заправка лазерных картриджей</p></b>
@@ -64,15 +64,18 @@ export function MainStep() {
       )
     } 
     return (
-      <Text className={classes.description}>
+      <Text className={classes.descriptionMobile}>
         <b>Ноутбуки, Мобильные телефоны, Планшеты, Мониторы, Телевизоры, Принтеры, Заправка лазерных картриджей</b>
+        <p>&nbsp;</p>
         <hr></hr>
         <b>
-        <p>Беларусь, Минск, ул. Лобанка, 94, павильон 10, ТЦ "MAXIMUS"</p>
+        <p>Беларусь, Минск,</p>
+        <p>ул. Лобанка, 94, павильон 10</p> 
+        <p>ТЦ "MAXIMUS"</p>
         <p>Пн - пт 11:00 - 20:00</p>
         <p>Сб - вскр 11:00 - 18:00</p>
-        <hr></hr>
         <p>+375 44 7310419 A1</p>
+        <hr></hr>
         </b>
       </Text>
     )
@@ -86,6 +89,7 @@ export function MainStep() {
         zIndex={0}
       />
       <Container className={classes.container}>
+        {/* <Title className={classes.title1}>Сайт находится на модернизации!</Title> */}
         <Title className={classes.title}>Ремонт цифровой техники</Title>
         {data(screenSizeW)}
         {contacts(screenSizeW)}
