@@ -65,20 +65,36 @@ export function MainStep() {
     } 
     return (
       <Text className={classes.descriptionMobile}>
-        <b>Ноутбуки, Мобильные телефоны, Планшеты, Мониторы, Телевизоры, Принтеры, Заправка лазерных картриджей</b>
+        {/* <b>Ноутбуки, Мобильные телефоны, Планшеты, Мониторы, Телевизоры, Принтеры, Заправка лазерных картриджей</b>
         <p>&nbsp;</p>
         <hr></hr>
-        <b>
-        <p>Беларусь, Минск,</p>
-        <p>ул. Лобанка, 94, павильон 10</p> 
+        <b> */}
+        <p>Минск, ул. Лобанка, 94, павильон 10</p>
+        {/* <p></p> 
         <p>ТЦ "MAXIMUS"</p>
         <p>Пн - пт 11:00 - 20:00</p>
         <p>Сб - вскр 11:00 - 18:00</p>
         <p>+375 44 7310419 A1</p>
         <hr></hr>
-        </b>
+        </b> */}
       </Text>
     )
+    // return (
+    //   <Text className={classes.descriptionMobile}>
+    //     <b>Ноутбуки, Мобильные телефоны, Планшеты, Мониторы, Телевизоры, Принтеры, Заправка лазерных картриджей</b>
+    //     <p>&nbsp;</p>
+    //     <hr></hr>
+    //     <b>
+    //     <p>Беларусь, Минск,</p>
+    //     <p>ул. Лобанка, 94, павильон 10</p> 
+    //     <p>ТЦ "MAXIMUS"</p>
+    //     <p>Пн - пт 11:00 - 20:00</p>
+    //     <p>Сб - вскр 11:00 - 18:00</p>
+    //     <p>+375 44 7310419 A1</p>
+    //     <hr></hr>
+    //     </b>
+    //   </Text>
+    // )
   }
 
     return (
@@ -90,7 +106,7 @@ export function MainStep() {
       />
       <Container className={classes.container}>
         {/* <Title className={classes.title1}>Сайт находится на модернизации!</Title> */}
-        <Title className={classes.title}>Ремонт цифровой техники</Title>
+        <Title className={classes.title}><h1>Ремонт ноутбуков и телефонов</h1></Title>
         {data(screenSizeW)}
         {contacts(screenSizeW)}
       </Container>
